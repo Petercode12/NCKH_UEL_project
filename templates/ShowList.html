@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+<link href="../static/css/showList.css" rel="stylesheet">
+</head>
+
+ <body>
+ <nav  style="background-color: #e3f2fd;">
+    <div class="container">
+        <!-- Site Logo Here -->
+        <a class="navbar-brand" href=""><img style="width: 350px; padding: 20px" src="https://cca.uel.edu.vn/Resources/Images/SubDomain/cca/UEL%20Brand%20Toolkit/UEL%20-%20Logo%20Vietnamese%20name%20beside.png"></a>
+        <!-- Mobile Toggle Button -->
+    </div>
+</nav>
+<table border=1>
+ <caption>Danh sách thông tin thực tập</caption>
+ <thead>
+     <tr>
+        <th>Mã số sinh viên</th>
+        <th>Họ</th>
+        <th>Tên sinh viên</th>
+        <th>Số điện thoại</th>
+        <th>Email</th>
+        <th>Tên đề tài thực tập</th>
+        <th>GVHD</th>
+        <th>Tên công ty</th>
+        <th>Địa chỉ</th>
+        <th>Họ tên người hướng dẫn</th>
+        <th>Số điện thoại người hướng dẫn</th>
+        <th>Email người hướng dẫn</th>
+        <th colspan="2">Xử lý</th>
+    </tr>
+ </thead>
+ {% for r in row %}
+
+    <script>
+    function myFunction1() {
+        if (confirm("Hey bro, want to delete?")) {
+                window.location = 'DeleteData?mssv={{r[0]}}'
+                return true;
+        } else {
+                return false;
+        }
+    }
+    </script>
+
+    <script>
+    function myFunction2() {
+          if (confirm("Hey bro, want to change?")) {
+                window.location = 'UpdateData?mssv={{r[0]}}'
+                return true;
+          } else {
+                return false;
+          }
+    }
+    </script>
+
+    <tbody>
+     <tr>
+         <td>{{r["MSSV"]}}</td>
+         <td>{{r["Ho"]}}</td>
+         <td>{{r["Ten"]}}</td>
+         <td>{{r["SDT"]}}</td>
+         <td>{{r["Email"]}}</td>
+         <td>{{r["TenDeTaiThucTap"]}}</td>
+         <td>{{r["GVHD"]}}</td>
+         <td>{{r["TenCongTy"]}}</td>
+         <td>{{r["Đia_chi"]}}</td>
+         <td>{{r["HoTen_NguoiHD"]}}</td>
+         <td>{{r["SDT_cty"]}}</td>
+         <td>{{r["Email_cty"]}}</td>
+         <td><button onclick="myFunction1()">Xóa</button></td> <td><button onclick="myFunction2()">Sửa</button></td>
+     </tr>
+    </tbody>
+ {% endfor %}
+ </table>
+ <br><br>
+ <a href="/AddData">Nhập thêm thông tin thực tập</a> |  <a href="/">Quay về trang chủ</a>
+ </body>
+ </html>

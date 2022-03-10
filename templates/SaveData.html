@@ -1,0 +1,159 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Dosis&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      text-align: center;
+      padding: 40px 0;
+      background: #ebf0f5;
+    }
+    h1 {
+      color: #88b04b;
+      font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+      font-weight: 900;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #404f5e;
+      /*font-family: "Comfortaa", cursive;*/
+      font-size: 22px;
+      margin: 0;
+    }
+    i {
+      color: #9abc66;
+      font-size: 100px;
+      line-height: 200px;
+      margin-left: -15px;
+    }
+    .card {
+      background: white;
+      padding: 60px;
+      border-radius: 4px;
+      width: 46em;
+      box-shadow: 0 2px 3px #c8d0d8;
+      display: inline-block;
+      margin: 0 auto;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      font-size: large;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .previous {
+      background-color: #f1f1f1;
+      color: black;
+      margin-right: 3px;
+      margin-top: 25px;
+    }
+
+    .next {
+      background-color: #f1f1f1;
+      color: black;
+      margin-left: 3px;
+      margin-top: 25px;
+    }
+
+    .round {
+      border-radius: 50%;
+    }
+
+    /* Animation */
+    @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+    .line-1 {
+      position: relative;
+      top: 50%;
+      width: auto;
+      margin: 0 auto;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      font-size: 180%;
+      text-align: center;
+      font-family: "Anonymous Pro", monospace;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .anim-typewriter {
+      animation: typewriter 3s steps(44) 0.2s 1 normal both,
+        blinkTextCursor 500ms steps(44) infinite normal;
+    }
+    @keyframes typewriter {
+      from {
+        width: 0;
+      }
+      to {
+        width: 24em;
+      }
+    }
+  </style>
+  <body>
+    <div class="card">
+      <div
+        style="
+          border-radius: 200px;
+          height: 200px;
+          width: 200px;
+          background: #f8faf5;
+          margin: 0 auto;
+        "
+      >
+        <i class="checkmark">✓</i>
+      </div>
+      <h1>Success</h1>
+      <p class="line-1 anim-typewriter">Thêm dữ liệu thành công</p>
+      <a href="/AddData" class="previous round">&#8249;</a>
+      <a href="/ShowList" class="next round">&#8250;</a>
+    </div>
+  </body>
+</html>
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang kết quả lưu thông tin thực tập</title>
+</head>
+<body>
+  <p>Kết quả lưu thông tin: <font color = blue>{{msg}}</font><p>
+      <a href="/AddData">Nhập thông tin thực tập</a> <br>
+        <a href="/ShowList">Xem danh sách thông tin thực tập</a>
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  if('{{msg}}' == "Thêm dữ liệu thành công"){
+    alert("Success");
+  }
+  else{
+    alert("Fail");
+  }
+}
+</script>
+ </body>
+ </html>
+-->

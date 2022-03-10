@@ -1,0 +1,103 @@
+        <!DOCTYPE html>
+        <style>
+        table, td, th {
+          border:2px  solid lightblue;
+        }
+        th {
+            solid lightblue; background-color: lightblue
+        }
+
+        td { font-size: 16px font-color:magenta}
+
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px
+
+        }
+        .div #bottom{
+        font-size: 16px font-color:magenta
+
+        }
+
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <style>
+         label {
+            color: blue;
+          }
+          </style>
+
+
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Đề tài NCKHSV</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        </head>
+        <body>
+        <nav  style="background-color: #e3f2fd;">
+            <div class="container">
+                <!-- Site Logo Here -->
+                <a class="navbar-brand" href=""><img style="width: 350px; padding: 20px" src="https://cca.uel.edu.vn/Resources/Images/SubDomain/cca/UEL%20Brand%20Toolkit/UEL%20-%20Logo%20Vietnamese%20name%20beside.png"></a>
+                <!-- Mobile Toggle Button -->
+            </div>
+        </nav>
+        <section class="py-20 bg-light overflow-hidden">
+          <div class="position-relative container">
+            <div class="position-relative mw-4xl mx-auto">
+              <div class="position-absolute top-50 start-0 end-0 translate-middle-y bg-info-light ms-n6 me-n6" style="height: 90%;"></div>
+              <div class="position-relative py-16 pt-md-32 pb-md-20 px-4 px-sm-8 bg-white">
+                <div class="mw-lg mx-auto text-center">
+                  <a class="d-inline-block h6 mb-14" href="#">
+                    <img class="img-fluid" src="yofte-assets/logos/yofte-logo.svg" alt="">
+                  </a>
+                  <h2 class="mb-8">TRA CỨU TÀI LIỆU ĐỀ TÀI THỰC TẬP</h2>
+                  <form action="/" method="POST" style="margin: 10px">
+
+              <p>Nhập tên đề tài thực tập: <input style="margin-top:10px" placeholder="Nhập từ khóa tìm kiếm..." class="form-control form-control-lg mb-4" type="text" size= "70" name="query" required>
+                  <p style="margin: 20px">Chọn số lượng kết quả cần hiển thị: <select name="num" required>
+          <option value=""></option>
+            <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+            <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+
+
+                  <script>
+        $( "select" )
+          .change(function () {
+            var str = "";
+            $( "select option:selected" ).each(function() {
+              str += $( this ).text() + " ";
+            });
+            $( "label" ).text( str );
+          })
+          .change();
+        </script>
+
+              <input type="submit" value="Tìm kiếm đề tài thực tập">
+
+        </form>
+                    <strong>Kết quả tìm kiếm cho: </strong><div style="display: inline-block; color: blue">{{ v_q }} <i style="color:black">(hiển thị cho {{ v_n }} kết quả tìm kiếm)</i></div><br/>
+
+                    <div style="text-align: left; margin-left:10px; margin-right:10px; margin-top: 10px">
+                <table> {{ v_rs|safe }}</table>
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </section>
+
+
+
+        </body>
+        </html>
